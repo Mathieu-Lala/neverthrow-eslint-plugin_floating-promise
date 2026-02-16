@@ -12,7 +12,7 @@ const asyncDivide = async (a: number, b: number): Promise<number> => {
 
 const asyncSafeDivide = async (
   a: number,
-  b: number
+  b: number,
 ): Promise<Result<number, E>> => {
   await new Promise((resolve) => setTimeout(resolve, 1));
   return safeDivide(a, b);
@@ -27,8 +27,14 @@ safeDivide(6, 0);
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 asyncDivide(6, 0);
 
-// FIXME: This line should trigger both @typescript-eslint/no-floating-promises and neverthrow/must-use-result
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 asyncSafeDivide(6, 0);
 
-// FIXME: This line should trigger both @typescript-eslint/no-floating-promises and neverthrow/must-use-result
+// eslint-disable-next-line neverthrow/must-use-result
+await asyncSafeDivide(6, 0);
+
+// eslint-disable-next-line neverthrow/must-use-result
 asyncSafeDivide2(6, 2);
+
+// eslint-disable-next-line neverthrow/must-use-result
+await asyncSafeDivide2(6, 2);
