@@ -1,6 +1,9 @@
-# [Issue](https://github.com/bufferings/eslint-plugin-neverthrow/issues/14)
+# Issues
+
+* ✅ [Promise+Result](https://github.com/bufferings/eslint-plugin-neverthrow/issues/14)
+* ❌ [safeTry](https://github.com/bufferings/eslint-plugin-neverthrow/issues/43)
 
 ```sh
-npm i
-npm run lint
+yarn
+yarn run lint
 ```
